@@ -24,6 +24,8 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
     var selectedActiveNumber = [Int]()
     var selectedRestNumber = [Int]()
     
+    var userSettingsInput = [Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -69,14 +71,17 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
         
     }
     
+//    var userSettingsInput = [Int]()
+    
     // For UICollectionViewDelegate
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         if collectionView == collectionViewOne {
             let setsCell = self.arrayOne[indexPath.row]
-            selectedSetsNumber.append(setsCell)
+            selectedActiveNumber.append(setsCell)
             print(setsCell)
+            
         }
         
         if collectionView == collectionViewTwo {
