@@ -25,7 +25,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tgy-zY-EsV">
                                 <rect key="frame" x="248" y="510" width="104" height="42"/>
-                                <color key="backgroundColor" red="0.2196078431372549" green="0.27843137254901962" blue="0.69803921568627447" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.11372549019607843" green="0.69803921568627447" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="104" id="iC4-jz-Enm"/>
                                     <constraint firstAttribute="height" constant="42" id="m3S-bZ-uW8"/>
@@ -56,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="1240" y="432"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="jtT-rc-nH0">
             <objects>
-                <viewController id="oSN-Pg-mDe" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HIITSettingsViewController" id="oSN-Pg-mDe" customClass="HIITSettingsViewController" customModule="HIITimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WJ8-k2-kTP"/>
                         <viewControllerLayoutGuide type="bottom" id="ooR-xH-e26"/>
@@ -67,12 +67,152 @@
                     <view key="view" contentMode="scaleToFill" id="brr-Bg-Jib">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HIITSettings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CUc-nz-hLs">
+                                <rect key="frame" x="239" y="83" width="122" height="30"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="23"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sets💎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tf6-Bs-rRi">
+                                <rect key="frame" x="270" y="121" width="60" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Active Time🏋🏿" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7m-7K-O3a">
+                                <rect key="frame" x="234" y="281" width="127" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="glq-GI-ho9">
+                                <rect key="frame" x="146" y="155" width="308" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="110" id="Fmm-Ri-ObQ"/>
+                                    <constraint firstAttribute="width" constant="308" id="TH4-gP-vno"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="oSN-Pg-mDe" id="XaM-na-gL7"/>
+                                </connections>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LrI-5H-f8x">
+                                <rect key="frame" x="137" y="286" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oSN-Pg-mDe" id="wMg-gw-Wc8"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rest Time 🛌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ht5-q5-ZEg">
+                                <rect key="frame" x="240" y="476" width="114" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x5f-Br-Chg">
+                                <rect key="frame" x="137" y="476" width="320" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oSN-Pg-mDe" id="bUS-RR-K3p"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.11372549019607843" green="0.69803921568627447" blue="0.59215686274509804" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="LrI-5H-f8x" firstAttribute="centerX" secondItem="brr-Bg-Jib" secondAttribute="centerX" id="2h5-7i-ijV"/>
+                            <constraint firstItem="Tf6-Bs-rRi" firstAttribute="centerX" secondItem="brr-Bg-Jib" secondAttribute="centerX" id="929-uw-ZGM"/>
+                            <constraint firstItem="Tf6-Bs-rRi" firstAttribute="top" secondItem="CUc-nz-hLs" secondAttribute="bottom" constant="20" id="EpI-RH-Slq"/>
+                            <constraint firstItem="CUc-nz-hLs" firstAttribute="centerX" secondItem="brr-Bg-Jib" secondAttribute="centerX" id="HtT-Zn-PXC"/>
+                            <constraint firstItem="Y7m-7K-O3a" firstAttribute="top" secondItem="glq-GI-ho9" secondAttribute="bottom" constant="26" id="LGC-Wf-SBD"/>
+                            <constraint firstItem="CUc-nz-hLs" firstAttribute="top" secondItem="WJ8-k2-kTP" secondAttribute="bottom" constant="19" id="O06-xL-Xid"/>
+                            <constraint firstItem="x5f-Br-Chg" firstAttribute="top" secondItem="ht5-q5-ZEg" secondAttribute="bottom" constant="-26" id="TZz-ni-uL3"/>
+                            <constraint firstItem="glq-GI-ho9" firstAttribute="centerX" secondItem="Tf6-Bs-rRi" secondAttribute="centerX" id="XHQ-X2-Im3"/>
+                            <constraint firstItem="glq-GI-ho9" firstAttribute="top" secondItem="Tf6-Bs-rRi" secondAttribute="bottom" constant="2" id="YcM-7q-EbO"/>
+                            <constraint firstItem="x5f-Br-Chg" firstAttribute="centerX" secondItem="brr-Bg-Jib" secondAttribute="centerX" id="ba7-oQ-fCq"/>
+                            <constraint firstItem="Y7m-7K-O3a" firstAttribute="centerX" secondItem="brr-Bg-Jib" secondAttribute="centerX" id="fCt-L8-vOQ"/>
+                            <constraint firstItem="x5f-Br-Chg" firstAttribute="top" secondItem="LrI-5H-f8x" secondAttribute="bottom" constant="-90" id="guu-92-kPB"/>
+                            <constraint firstItem="LrI-5H-f8x" firstAttribute="top" secondItem="Y7m-7K-O3a" secondAttribute="bottom" constant="-31" id="o4J-1o-Z2q"/>
+                            <constraint firstItem="ht5-q5-ZEg" firstAttribute="centerX" secondItem="brr-Bg-Jib" secondAttribute="centerX" id="sVa-km-cON"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="activeTimePickerView" destination="LrI-5H-f8x" id="y49-G8-Z1i"/>
+                        <outlet property="setsPickerView" destination="glq-GI-ho9" id="lMD-7I-vRG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xWL-2I-Fnc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1914" y="432"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="niS-ga-xVN">
+            <objects>
+                <viewController id="2Hy-jA-hNj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="n09-Gh-0gy"/>
+                        <viewControllerLayoutGuide type="bottom" id="c1L-J4-Ubp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qQI-yn-ToQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LFn-RT-Gid" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2602" y="1141"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4mE-JN-vgg">
+            <objects>
+                <viewController id="cpS-AJ-19k" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bBS-1A-Drl"/>
+                        <viewControllerLayoutGuide type="bottom" id="xNI-m8-DRL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ne4-6P-J9j">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kFj-zZ-Xdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3292" y="1141"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="dgK-P7-cEG">
+            <objects>
+                <viewController id="dVs-Wf-Lit" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1qM-tz-GPP"/>
+                        <viewControllerLayoutGuide type="bottom" id="glg-1w-3YR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hnY-m7-yHN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2MY-hp-jsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3292" y="1838"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="iib-sK-USw">
+            <objects>
+                <viewController id="ddb-JF-m5V" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9no-so-eT3"/>
+                        <viewControllerLayoutGuide type="bottom" id="BDL-zi-1wd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pV1-W8-Idb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SfL-N7-5el" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2602" y="432"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BQ4-5i-Y66">

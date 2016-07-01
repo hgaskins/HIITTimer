@@ -21,9 +21,10 @@ class WecomeViewController: UIViewController {
     }
     
     
-    func setupAppearance() {
+    private func setupAppearance() {
         //
         letsGoButton.layer.cornerRadius = 3.0
+        letsGoButton.layer.opacity = 0.9
     }
     
     
