@@ -16,6 +16,9 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
     @IBOutlet weak var collectionViewTwo: UICollectionView!
     @IBOutlet weak var collectionViewThree: UICollectionView!
     
+    @IBOutlet weak var letsHIITButton: UIButton!
+    
+    
     var arrayOne = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     
     var arrayTwo = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
@@ -28,8 +31,7 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        //        collectionViewOne.delegate = self // the equivalent of dragging within the storyboard to set delegate
+        setupAppearance()
         
         
     }
@@ -97,6 +99,12 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
         }
         
         
+    }
+    
+    private func setupAppearance() {
+        //
+        letsHIITButton.layer.cornerRadius = 3.0
+        letsHIITButton.layer.opacity = 0.9
     }
     
     
