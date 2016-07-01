@@ -8,68 +8,93 @@
 
 import UIKit
 
-class HIITSettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-    
-    
-    @IBOutlet weak var setsPickerView: UIPickerView!
-    @IBOutlet weak var activeTimePickerView: UIPickerView!
 
+
+class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
+    
+    @IBOutlet weak var collectionViewOne: UICollectionView!
+    @IBOutlet weak var collectionViewTwo: UICollectionView!
+    @IBOutlet weak var collectionViewThree: UICollectionView!
+    
+    var arrayOne = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    
+    var arrayTwo = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
+    
+    var selectedSetsNumber = [Int]()
+    var selectedActiveNumber = [Int]()
+    var selectedRestNumber = [Int]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        //        collectionViewOne.delegate = self // the equivalent of dragging within the storyboard to set delegate
         
-        // setting setsPickerView delegate and dataSource to the HIITSettingsVC
-        setsPickerView.delegate = self
-        setsPickerView.dataSource = self
         
-        activeTimePickerView.delegate = self
-        activeTimePickerView.dataSource = self
-        
-
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-    }
-
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        // Dispose of any resources that can be recreated.
     }
     
     
-    // MARK: PickerView Info
+    // for UICollectionViewDataSource
     
-    var setsArray = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"]
-    
-    var activeTimeArray = ["5", "10", "15", "20", "25", "30", "35", "45", "50", "55", "60", "65", "70"]
-    
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        if pickerView === setsPickerView {
-            return setsArray.count
-        } else if pickerView == activeTimeArray {
-            return activeTimeArray.count
-        } else {
-            return 0
+        if collectionView == collectionViewOne {
+            return arrayOne.count
+        } else if collectionView == collectionViewTwo || collectionView == collectionViewThree {
+            return arrayTwo.count
         }
         
+        return 0
     }
-
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
         
-        if pickerView === setsPickerView {
-            return setsArray[row]
-        } else if pickerView == activeTimeArray {
-            return activeTimeArray[row]
-        } else {
-            return nil
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as!
+        CollectionViewCell
+        
+        cell.layer.cornerRadius = 50.0
+        
+        if collectionView == collectionViewOne {
+            cell.cellLabel.text = String(arrayOne[indexPath.row])
+        } else if collectionView == collectionViewTwo || collectionView == collectionViewThree {
+            cell.cellLabel.text = String(arrayTwo[indexPath.row])
         }
-
+        
+        return cell
+        
     }
-
+    
+    // For UICollectionViewDelegate
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        if collectionView == collectionViewOne {
+            let setsCell = self.arrayOne[indexPath.row]
+            selectedSetsNumber.append(setsCell)
+            print(setsCell)
+        }
+        
+        if collectionView == collectionViewTwo {
+            let activeCell = self.arrayTwo[indexPath.row]
+            selectedActiveNumber.append(activeCell)
+            print(activeCell)
+        }
+        
+        if collectionView == collectionViewThree {
+            let restCell = self.arrayTwo[indexPath.row]
+            selectedRestNumber.append(restCell)
+            print(restCell)
+        }
+        
+        
+    }
+    
+    
 }
+
+

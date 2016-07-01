@@ -14,6 +14,7 @@
 		EED8C57F1D25BAB600CF5AD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED8C57D1D25BAB600CF5AD7 /* LaunchScreen.storyboard */; };
 		EED8C5881D25C34E00CF5AD7 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C5871D25C34E00CF5AD7 /* WelcomeViewController.swift */; };
 		EED8C58C1D25D0A300CF5AD7 /* HIITSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C58B1D25D0A300CF5AD7 /* HIITSettingsViewController.swift */; };
+		EED8C5D11D26E34800CF5AD7 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C5D01D26E34800CF5AD7 /* CollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		EED8C5801D25BAB600CF5AD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EED8C5871D25C34E00CF5AD7 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		EED8C58B1D25D0A300CF5AD7 /* HIITSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HIITSettingsViewController.swift; sourceTree = "<group>"; };
+		EED8C5D01D26E34800CF5AD7 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 		EED8C5891D25C35400CF5AD7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EED8C5D01D26E34800CF5AD7 /* CollectionViewCell.swift */,
 				EED8C58B1D25D0A300CF5AD7 /* HIITSettingsViewController.swift */,
 				EED8C5871D25C34E00CF5AD7 /* WelcomeViewController.swift */,
 				EED8C5761D25BAB600CF5AD7 /* ViewController.swift */,
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EED8C5D11D26E34800CF5AD7 /* CollectionViewCell.swift in Sources */,
 				EED8C5881D25C34E00CF5AD7 /* WelcomeViewController.swift in Sources */,
 				EED8C5771D25BAB600CF5AD7 /* ViewController.swift in Sources */,
 				EED8C58C1D25D0A300CF5AD7 /* HIITSettingsViewController.swift in Sources */,
