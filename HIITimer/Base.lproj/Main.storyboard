@@ -108,12 +108,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2MY-hp-jsN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3292" y="1838"/>
+            <point key="canvasLocation" x="2602" y="1852"/>
         </scene>
-        <!--View Controller-->
+        <!--Staging View Controller-->
         <scene sceneID="iib-sK-USw">
             <objects>
-                <viewController id="ddb-JF-m5V" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StagingViewController" id="ddb-JF-m5V" customClass="StagingViewController" customModule="HIITimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9no-so-eT3"/>
                         <viewControllerLayoutGuide type="bottom" id="BDL-zi-1wd"/>
@@ -312,7 +312,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIW-QX-2lz">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIW-QX-2lz">
                                 <rect key="frame" x="200" y="602" width="200" height="40"/>
                                 <color key="backgroundColor" red="0.36470588235294116" green="1" blue="0.88235294117647056" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -324,7 +324,7 @@
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ddb-JF-m5V" kind="show" id="Yjf-Ay-DNk"/>
+                                    <action selector="letsHIITButtonSelected:" destination="p3g-eB-ctM" eventType="touchUpInside" id="Uhk-pj-xPM"/>
                                 </connections>
                             </button>
                         </subviews>

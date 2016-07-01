@@ -9,7 +9,6 @@
 import UIKit
 
 
-
 class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource  {
     
     @IBOutlet weak var collectionViewOne: UICollectionView!
@@ -18,16 +17,15 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
     
     @IBOutlet weak var letsHIITButton: UIButton!
     
+    var setsCell = 0
+    var activeCell = 0
+    var restCell = 0
+    
     
     var arrayOne = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
     
     var arrayTwo = [5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60]
     
-    var selectedSetsNumber = [Int]()
-    var selectedActiveNumber = [Int]()
-    var selectedRestNumber = [Int]()
-    
-    var userSettingsInput = [Int]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,33 +71,36 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
         
     }
     
-//    var userSettingsInput = [Int]()
     
     // For UICollectionViewDelegate
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        var cell = collectionView.cellForItemAtIndexPath(indexPath)
+        
         if collectionView == collectionViewOne {
-            let setsCell = self.arrayOne[indexPath.row]
-            selectedActiveNumber.append(setsCell)
-            print(setsCell)
             
+            setsCell = self.arrayOne[indexPath.row]
+            cell?.layer.backgroundColor = UIColor.cyanColor().CGColor
         }
         
         if collectionView == collectionViewTwo {
-            let activeCell = self.arrayTwo[indexPath.row]
-            selectedActiveNumber.append(activeCell)
-            print(activeCell)
+            
+            activeCell = self.arrayTwo[indexPath.row]
         }
         
         if collectionView == collectionViewThree {
-            let restCell = self.arrayTwo[indexPath.row]
-            selectedRestNumber.append(restCell)
-            print(restCell)
+            
+            restCell = self.arrayTwo[indexPath.row]
         }
         
         
+        
+        UserRoutine.shared.setUserRoutine(setsCell, activeTime: activeCell, restTime: restCell)
+        
     }
+    
+    
     
     private func setupAppearance() {
         //
@@ -107,6 +108,21 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
         letsHIITButton.layer.opacity = 0.9
     }
     
+    @IBAction func letsHIITButtonSelected(sender: UIButton) {
+        
+        if setsCell > 0 && activeCell > 0 && restCell > 0 {
+            
+            let stageVC = self.storyboard?.instantiateViewControllerWithIdentifier("StagingViewController") as? StagingViewController
+            
+            self.navigationController?.pushViewController(stageVC!, animated: true)
+            
+        } else {
+            
+            // alert user to sselect all options
+            
+            print("🍊")
+        }
+    }
     
 }
 
