@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Wecome View Controller-->
@@ -75,24 +76,6 @@
             <point key="canvasLocation" x="2602" y="1141"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="4mE-JN-vgg">
-            <objects>
-                <viewController id="cpS-AJ-19k" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="bBS-1A-Drl"/>
-                        <viewControllerLayoutGuide type="bottom" id="xNI-m8-DRL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ne4-6P-J9j">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kFj-zZ-Xdq" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3292" y="1141"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="dgK-P7-cEG">
             <objects>
                 <viewController id="dVs-Wf-Lit" sceneMemberID="viewController">
@@ -113,6 +96,7 @@
         <!--Staging View Controller-->
         <scene sceneID="iib-sK-USw">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SfL-N7-5el" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="StagingViewController" id="ddb-JF-m5V" customClass="StagingViewController" customModule="HIITimer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9no-so-eT3"/>
@@ -121,10 +105,26 @@
                     <view key="view" contentMode="scaleToFill" id="pV1-W8-Idb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0n-4p-uFf">
+                                <rect key="frame" x="0.0" y="142" width="600" height="146"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="132"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="v0n-4p-uFf" secondAttribute="trailing" constant="-20" id="3Kw-iE-dER"/>
+                            <constraint firstItem="BDL-zi-1wd" firstAttribute="top" secondItem="v0n-4p-uFf" secondAttribute="bottom" constant="312" id="ICp-D9-03K"/>
+                            <constraint firstItem="v0n-4p-uFf" firstAttribute="leading" secondItem="pV1-W8-Idb" secondAttribute="leadingMargin" constant="-20" id="KxS-zt-u4s"/>
+                            <constraint firstItem="v0n-4p-uFf" firstAttribute="top" secondItem="9no-so-eT3" secondAttribute="bottom" constant="122" id="wah-8A-MQ3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="countDownTimer" destination="v0n-4p-uFf" id="Vxx-eQ-e6C"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SfL-N7-5el" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2597" y="432"/>
         </scene>

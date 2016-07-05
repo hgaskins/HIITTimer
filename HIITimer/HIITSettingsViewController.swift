@@ -36,7 +36,6 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     
@@ -54,7 +53,6 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as!
         CollectionViewCell
@@ -76,34 +74,31 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        var cell = collectionView.cellForItemAtIndexPath(indexPath)
+        let cell = collectionView.cellForItemAtIndexPath(indexPath)
         
         if collectionView == collectionViewOne {
-            
             setsCell = self.arrayOne[indexPath.row]
             cell?.layer.backgroundColor = UIColor.cyanColor().CGColor
+            print("\(setsCell)")
         }
         
         if collectionView == collectionViewTwo {
-            
             activeCell = self.arrayTwo[indexPath.row]
+            cell?.layer.backgroundColor = UIColor.redColor().CGColor
+            print("\(activeCell)")
         }
         
         if collectionView == collectionViewThree {
-            
             restCell = self.arrayTwo[indexPath.row]
+            cell?.layer.backgroundColor = UIColor.greenColor().CGColor
+            print("\(restCell)")
         }
-        
-        
         
         UserRoutine.shared.setUserRoutine(setsCell, activeTime: activeCell, restTime: restCell)
         
     }
     
-    
-    
     private func setupAppearance() {
-        //
         letsHIITButton.layer.cornerRadius = 3.0
         letsHIITButton.layer.opacity = 0.9
     }
@@ -119,7 +114,6 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
         } else {
             
             // alert user to sselect all options
-            
             print("🍊")
         }
     }
