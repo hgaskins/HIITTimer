@@ -21,6 +21,7 @@ class UserRoutine {
     // sets the UserRoutine variables, and holds object settings no matter where we are in the app
     
     func setUserRoutine(sets: Int, activeTime: Int, restTime: Int) {
+        
         self.sets = sets
         self.activeTime = activeTime
         self.restTime = restTime

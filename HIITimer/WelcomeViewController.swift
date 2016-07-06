@@ -14,11 +14,19 @@ class WecomeViewController: UIViewController {
     @IBOutlet weak var letsGoButton: UIButton!
     
     override func viewDidLoad() {
+        
+        super.viewDidLoad()
         setupAppearance()
     }
     
+    override func viewWillAppear(animated: Bool) {
+        
+        super.viewWillAppear(animated)
+        self.navigationController!.navigationBar.hidden = false
+    }
     
     private func setupAppearance() {
+        
         letsGoButton.layer.cornerRadius = 3.0
         letsGoButton.layer.opacity = 0.9
     }

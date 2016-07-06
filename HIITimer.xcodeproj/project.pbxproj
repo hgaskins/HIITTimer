@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE7F6EB61D2D6C6C00078F0D /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F6EB51D2D6C6C00078F0D /* CongratsViewController.swift */; };
 		EED8C5751D25BAB600CF5AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C5741D25BAB600CF5AD7 /* AppDelegate.swift */; };
 		EED8C5771D25BAB600CF5AD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C5761D25BAB600CF5AD7 /* ViewController.swift */; };
 		EED8C57A1D25BAB600CF5AD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED8C5781D25BAB600CF5AD7 /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE7F6EB51D2D6C6C00078F0D /* CongratsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
 		EED8C5711D25BAB600CF5AD7 /* HIITimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED8C5741D25BAB600CF5AD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EED8C5761D25BAB600CF5AD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,10 +88,11 @@
 			isa = PBXGroup;
 			children = (
 				EED8C5D01D26E34800CF5AD7 /* CollectionViewCell.swift */,
+				EE7F6EB51D2D6C6C00078F0D /* CongratsViewController.swift */,
 				EED8C58B1D25D0A300CF5AD7 /* HIITSettingsViewController.swift */,
-				EED8C5871D25C34E00CF5AD7 /* WelcomeViewController.swift */,
-				EED8C5761D25BAB600CF5AD7 /* ViewController.swift */,
 				EED8C5D61D2723C400CF5AD7 /* StagingViewController.swift */,
+				EED8C5761D25BAB600CF5AD7 /* ViewController.swift */,
+				EED8C5871D25C34E00CF5AD7 /* WelcomeViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				EED8C5771D25BAB600CF5AD7 /* ViewController.swift in Sources */,
 				EED8C58C1D25D0A300CF5AD7 /* HIITSettingsViewController.swift in Sources */,
 				EED8C5751D25BAB600CF5AD7 /* AppDelegate.swift in Sources */,
+				EE7F6EB61D2D6C6C00078F0D /* CongratsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
