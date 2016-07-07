@@ -125,6 +125,28 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
         letsHIITButton.layer.opacity = 0.9
     }
     
+    func wiggle(collectionView: UICollectionView) {
+        
+        UIView.animateKeyframesWithDuration(0.50, delay: 0, options: .BeginFromCurrentState, animations: {
+            UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.25, animations: { 
+                collectionView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/45.0))
+            })
+            UIView.addKeyframeWithRelativeStartTime(0.25, relativeDuration: 0.5, animations: {
+                collectionView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/315.0))
+            })
+
+            UIView.addKeyframeWithRelativeStartTime(0.5, relativeDuration: 0.75, animations: {
+                collectionView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/45.0))
+            })
+            
+            UIView.addKeyframeWithRelativeStartTime(0.75, relativeDuration: 1.0, animations: {
+                collectionView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/315.0))
+            })
+
+            }, completion: nil)
+        
+    }
+    
     @IBAction func letsHIITButtonSelected(sender: UIButton) {
         
         if setsCell > 0 && activeCell > 0 && restCell > 0 {
@@ -136,6 +158,16 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
             let alertController = UIAlertController(title: "👎 click em all!", message: "select all options to continue 👍", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
+            
+            if setsCell == 0 {
+                wiggle(collectionViewOne)
+            }
+            if activeCell == 0 {
+                wiggle(collectionViewTwo)
+            }
+            if restCell == 0 {
+                wiggle(collectionViewThree)
+            }
         }
     }
 }
