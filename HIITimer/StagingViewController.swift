@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 
 class StagingViewController: UIViewController {
@@ -52,7 +53,7 @@ class StagingViewController: UIViewController {
     func setCountDownLabel() {
         
         countDownTimer.text = String(initialTimerValue)
-        let blueColor = UIColor(red: 0/255.0, green: 158/255.0, blue: 143/255.0, alpha: 1.0)
+        let blueColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
         view.backgroundColor = blueColor
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         activeOrRestTimerLabel.text = "get ready 🤘"
@@ -86,7 +87,7 @@ class StagingViewController: UIViewController {
         
         activeTimerValue = UserRoutine.shared.activeTime
         countDownTimer.text = String(activeTimerValue)
-        let orangeColor = UIColor(red: 209/255.0, green: 26/255.0, blue: 21/255.0, alpha: 1.0)
+        let orangeColor = UIColor(red: 242/255.0, green: 94/255.0, blue: 5/255.0, alpha: 1.0)
         view.backgroundColor = orangeColor
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.updateActiveTimer), userInfo: nil, repeats: true)
@@ -125,7 +126,7 @@ class StagingViewController: UIViewController {
         
         restTimerValue = UserRoutine.shared.restTime
         countDownTimer.text = String(restTimerValue)
-        let restColor = UIColor(red: 21/255.0, green: 128/255.0, blue: 209/255.0, alpha: 1)
+        let restColor = UIColor(red: 20/255.0, green: 94/255.0, blue: 140/255.0, alpha: 1)
         view.backgroundColor = restColor
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.updateRestTimer), userInfo: nil, repeats: true)

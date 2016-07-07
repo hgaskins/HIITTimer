@@ -57,7 +57,7 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
         
         cell.layer.cornerRadius = 40.0
         cell.layer.borderWidth = 1.2
-        cell.layer.opacity = 0.8
+        cell.layer.opacity = 0.9
         cell.layer.borderColor = UIColor(red: 23/255.0, green: 42/255.0, blue: 56/255.0, alpha: 0.75).CGColor
         
         
@@ -74,30 +74,55 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let cell = collectionView.cellForItemAtIndexPath(indexPath)
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as? CollectionViewCell
         
         if collectionView == collectionViewOne {
             setsCell = self.arrayOne[indexPath.row]
-            cell?.layer.backgroundColor = UIColor(red: 93/255.0, green: 255/255.0, blue: 225/255.0, alpha: 1.0).CGColor
-            cell?.layer.opacity = 0.7
-            print("\(setsCell)")
+            cell?.layer.backgroundColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0).CGColor
+//            cell?.layer.opacity = 0.7
+            cell?.cellLabel.textColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
+            
         }
         
         if collectionView == collectionViewTwo {
             activeCell = self.arrayTwo[indexPath.row]
-            cell?.layer.backgroundColor = UIColor(red: 93/255.0, green: 255/255.0, blue: 225/255.0, alpha: 1.0).CGColor
-            cell?.layer.opacity = 0.7
-            print("\(activeCell)")
+            cell?.layer.backgroundColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0).CGColor
+//            cell?.layer.opacity = 0.7
+            cell?.cellLabel.textColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
         }
         
         if collectionView == collectionViewThree {
             restCell = self.arrayTwo[indexPath.row]
-            cell?.layer.backgroundColor = UIColor(red: 93/255.0, green: 255/255.0, blue: 225/255.0, alpha: 1.0).CGColor
-            cell?.layer.opacity = 0.7
-            print("\(restCell)")
+            cell?.layer.backgroundColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0).CGColor
+//            cell?.layer.opacity = 0.7
+            cell?.cellLabel.textColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
         }
         
         UserRoutine.shared.setUserRoutine(setsCell, activeTime: activeCell, restTime: restCell)
+    }
+    
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = collectionView.cellForItemAtIndexPath(indexPath) as? CollectionViewCell
+        
+        if collectionView == collectionViewOne {
+            cell?.layer.backgroundColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0).CGColor
+//            cell?.layer.opacity = 0.7
+            cell?.cellLabel.textColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0)
+        }
+        
+        if collectionView == collectionViewTwo {
+            cell?.layer.backgroundColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0).CGColor
+//            cell?.layer.opacity = 0.7
+            cell?.cellLabel.textColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0)
+        }
+        
+        if collectionView == collectionViewThree {
+            cell?.layer.backgroundColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0).CGColor
+//            cell?.layer.opacity = 0.7
+            cell?.cellLabel.textColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0)
+        }
+       
     }
     
     private func setupAppearance() {
