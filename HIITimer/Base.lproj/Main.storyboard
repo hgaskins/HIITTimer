@@ -70,30 +70,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👌🏾Nice!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-Yv-4hA">
-                                <rect key="frame" x="187" y="89" width="226" height="134"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="134" id="0hd-8o-qlV"/>
-                                    <constraint firstAttribute="width" constant="226" id="T8y-Dv-ftC"/>
-                                    <constraint firstAttribute="width" constant="226" id="poy-2y-Aes"/>
-                                    <constraint firstAttribute="height" constant="134" id="z8v-EO-o25"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
-                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="T8y-Dv-ftC"/>
-                                        <exclude reference="z8v-EO-o25"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="T8y-Dv-ftC"/>
-                                        <include reference="z8v-EO-o25"/>
-                                    </mask>
-                                </variation>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNx-aZ-NMw">
                                 <rect key="frame" x="224" y="408" width="152" height="50"/>
                                 <color key="backgroundColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -123,11 +99,37 @@
                                     <action selector="goAgainButton:" destination="2Hy-jA-hNj" eventType="touchUpInside" id="UuF-9w-9p9"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="👌🏾Nice!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-Yv-4hA">
+                                <rect key="frame" x="187" y="198" width="226" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="134" id="0hd-8o-qlV"/>
+                                    <constraint firstAttribute="width" constant="226" id="T8y-Dv-ftC"/>
+                                    <constraint firstAttribute="width" constant="226" id="poy-2y-Aes"/>
+                                    <constraint firstAttribute="height" constant="134" id="z8v-EO-o25"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="40"/>
+                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0hd-8o-qlV"/>
+                                        <exclude reference="T8y-Dv-ftC"/>
+                                        <exclude reference="z8v-EO-o25"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="T8y-Dv-ftC"/>
+                                        <include reference="z8v-EO-o25"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="cNx-aZ-NMw" firstAttribute="centerX" secondItem="qQI-yn-ToQ" secondAttribute="centerX" id="2go-Ot-nro"/>
                             <constraint firstItem="p0l-Yv-4hA" firstAttribute="centerX" secondItem="qQI-yn-ToQ" secondAttribute="centerX" id="7AB-5K-4p7"/>
+                            <constraint firstItem="p0l-Yv-4hA" firstAttribute="centerY" secondItem="qQI-yn-ToQ" secondAttribute="centerY" id="8Ox-kc-7hE"/>
                             <constraint firstItem="p0l-Yv-4hA" firstAttribute="top" secondItem="n09-Gh-0gy" secondAttribute="bottom" constant="69" id="Coj-MZ-TW9">
                                 <variation key="heightClass=regular" constant="239"/>
                             </constraint>
@@ -135,6 +137,7 @@
                                 <variation key="heightClass=regular" constant="42"/>
                             </constraint>
                             <constraint firstItem="c1L-J4-Ubp" firstAttribute="top" secondItem="cNx-aZ-NMw" secondAttribute="bottom" constant="142" id="Ijq-rf-f7K"/>
+                            <constraint firstItem="p0l-Yv-4hA" firstAttribute="top" secondItem="n09-Gh-0gy" secondAttribute="bottom" constant="178" id="VGN-1S-zcG"/>
                             <constraint firstItem="cNx-aZ-NMw" firstAttribute="centerX" secondItem="qQI-yn-ToQ" secondAttribute="centerX" id="ViZ-v7-Sw6"/>
                             <constraint firstItem="cNx-aZ-NMw" firstAttribute="centerX" secondItem="qQI-yn-ToQ" secondAttribute="centerX" id="kxn-Yp-61S">
                                 <variation key="heightClass=regular" constant="14"/>
@@ -142,10 +145,13 @@
                             <constraint firstItem="p0l-Yv-4hA" firstAttribute="centerX" secondItem="cNx-aZ-NMw" secondAttribute="centerX" id="ldq-B2-kzg"/>
                             <constraint firstItem="cNx-aZ-NMw" firstAttribute="centerX" secondItem="p0l-Yv-4hA" secondAttribute="centerX" id="ok6-TD-tSL"/>
                             <constraint firstItem="p0l-Yv-4hA" firstAttribute="top" secondItem="n09-Gh-0gy" secondAttribute="bottom" constant="69" id="sYL-wI-oe9"/>
+                            <constraint firstItem="cNx-aZ-NMw" firstAttribute="top" secondItem="p0l-Yv-4hA" secondAttribute="bottom" constant="76" id="tRW-xU-9l9"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="8Ox-kc-7hE"/>
                                 <exclude reference="Coj-MZ-TW9"/>
+                                <exclude reference="sYL-wI-oe9"/>
                                 <exclude reference="2go-Ot-nro"/>
                                 <exclude reference="ViZ-v7-Sw6"/>
                                 <exclude reference="kxn-Yp-61S"/>
@@ -269,7 +275,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QS5-s8-CIo">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QS5-s8-CIo">
                                 <rect key="frame" x="0.0" y="73" width="600" height="90"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -319,93 +325,7 @@
                                     <outlet property="delegate" destination="p3g-eB-ctM" id="ppc-Xi-LfU"/>
                                 </connections>
                             </collectionView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="03s-Jb-HQ4">
-                                <rect key="frame" x="0.0" y="228" width="600" height="90"/>
-                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="gnQ-sW-IgS"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Rt-0g-IlP">
-                                    <size key="itemSize" width="80" height="80"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="8aJ-VH-N49" customClass="CollectionViewCell" customModule="HIITimer" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="5" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-zQ-8eD">
-                                                    <rect key="frame" x="15" y="22" width="50.5" height="36.5"/>
-                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
-                                                    <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <constraints>
-                                            <constraint firstItem="2Ls-zQ-8eD" firstAttribute="centerY" secondItem="8aJ-VH-N49" secondAttribute="centerY" id="16m-t5-Ev8"/>
-                                            <constraint firstItem="2Ls-zQ-8eD" firstAttribute="centerX" secondItem="8aJ-VH-N49" secondAttribute="centerX" id="nkv-Bp-fvq"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="cellLabel" destination="2Ls-zQ-8eD" id="kQY-o9-xq3"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="gnQ-sW-IgS"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="p3g-eB-ctM" id="aWZ-o8-iMp"/>
-                                    <outlet property="delegate" destination="p3g-eB-ctM" id="n7h-sc-Lva"/>
-                                </connections>
-                            </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ActiveTime 🏋🏿" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFl-W4-KA7">
-                                <rect key="frame" x="236" y="199" width="127" height="26"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="RestTime🛌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-mr-teB">
-                                <rect key="frame" x="249" y="364" width="101.5" height="26"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIW-QX-2lz">
-                                <rect key="frame" x="200" y="535" width="200" height="40"/>
-                                <color key="backgroundColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="VnD-uV-nz8"/>
-                                    <constraint firstAttribute="height" constant="40" id="h15-Ry-Bw0">
-                                        <variation key="heightClass=regular" constant="42"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
-                                <state key="normal" title="Let's HIIT 🤘">
-                                    <color key="titleColor" red="0.9973357371794872" green="0.9973357371794872" blue="0.9973357371794872" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <variation key="heightClass=regular" misplaced="YES">
-                                    <rect key="frame" x="200" y="712" width="200" height="42"/>
-                                </variation>
-                                <connections>
-                                    <action selector="letsHIITButtonSelected:" destination="p3g-eB-ctM" eventType="touchUpInside" id="Uhk-pj-xPM"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Sets 💎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ2-kl-vle">
-                                <rect key="frame" x="267" y="44" width="66" height="26"/>
-                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
-                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p0D-4b-a8W">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="p0D-4b-a8W">
                                 <rect key="frame" x="0.0" y="398" width="600" height="90"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -455,6 +375,92 @@
                                     <outlet property="delegate" destination="p3g-eB-ctM" id="N2S-iA-UH0"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ActiveTime 🏋🏿" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KFl-W4-KA7">
+                                <rect key="frame" x="236" y="199" width="127" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RestTime🛌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJm-mr-teB">
+                                <rect key="frame" x="249" y="364" width="101.5" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIW-QX-2lz">
+                                <rect key="frame" x="200" y="535" width="200" height="40"/>
+                                <color key="backgroundColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="VnD-uV-nz8"/>
+                                    <constraint firstAttribute="height" constant="40" id="h15-Ry-Bw0">
+                                        <variation key="heightClass=regular" constant="42"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
+                                <state key="normal" title="Let's HIIT 🤘">
+                                    <color key="titleColor" red="0.9973357371794872" green="0.9973357371794872" blue="0.9973357371794872" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="heightClass=regular" misplaced="YES">
+                                    <rect key="frame" x="200" y="712" width="200" height="42"/>
+                                </variation>
+                                <connections>
+                                    <action selector="letsHIITButtonSelected:" destination="p3g-eB-ctM" eventType="touchUpInside" id="Uhk-pj-xPM"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sets 💎" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qZ2-kl-vle">
+                                <rect key="frame" x="267" y="44" width="66" height="26"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="20"/>
+                                <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="03s-Jb-HQ4">
+                                <rect key="frame" x="0.0" y="228" width="600" height="90"/>
+                                <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="gnQ-sW-IgS"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2Rt-0g-IlP">
+                                    <size key="itemSize" width="80" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="8aJ-VH-N49" customClass="CollectionViewCell" customModule="HIITimer" customModuleProvider="target">
+                                        <rect key="frame" x="10" y="5" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ls-zQ-8eD">
+                                                    <rect key="frame" x="15" y="22" width="50.5" height="36.5"/>
+                                                    <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="28"/>
+                                                    <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="2Ls-zQ-8eD" firstAttribute="centerY" secondItem="8aJ-VH-N49" secondAttribute="centerY" id="16m-t5-Ev8"/>
+                                            <constraint firstItem="2Ls-zQ-8eD" firstAttribute="centerX" secondItem="8aJ-VH-N49" secondAttribute="centerX" id="nkv-Bp-fvq"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="cellLabel" destination="2Ls-zQ-8eD" id="kQY-o9-xq3"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="gnQ-sW-IgS"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="p3g-eB-ctM" id="aWZ-o8-iMp"/>
+                                    <outlet property="delegate" destination="p3g-eB-ctM" id="n7h-sc-Lva"/>
+                                </connections>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -485,7 +491,7 @@
                             <constraint firstItem="qZ2-kl-vle" firstAttribute="top" secondItem="QHI-QH-KE2" secondAttribute="bottom" constant="89" id="Wdq-pb-ciX">
                                 <variation key="heightClass=regular" constant="50"/>
                             </constraint>
-                            <constraint firstItem="qZ2-kl-vle" firstAttribute="top" secondItem="QHI-QH-KE2" secondAttribute="bottom" constant="24" id="Xu8-Mk-pHz"/>
+                            <constraint firstItem="qZ2-kl-vle" firstAttribute="top" secondItem="QHI-QH-KE2" secondAttribute="bottom" constant="-20" id="Xu8-Mk-pHz"/>
                             <constraint firstItem="pmA-aJ-7wD" firstAttribute="top" secondItem="WIW-QX-2lz" secondAttribute="bottom" constant="158" id="ZxT-Oi-UgK">
                                 <variation key="heightClass=regular" constant="46"/>
                             </constraint>

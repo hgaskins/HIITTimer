@@ -79,7 +79,6 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
         if collectionView == collectionViewOne {
             setsCell = self.arrayOne[indexPath.row]
             cell?.layer.backgroundColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0).CGColor
-//            cell?.layer.opacity = 0.7
             cell?.cellLabel.textColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
             
         }
@@ -87,14 +86,12 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
         if collectionView == collectionViewTwo {
             activeCell = self.arrayTwo[indexPath.row]
             cell?.layer.backgroundColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0).CGColor
-//            cell?.layer.opacity = 0.7
             cell?.cellLabel.textColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
         }
         
         if collectionView == collectionViewThree {
             restCell = self.arrayTwo[indexPath.row]
             cell?.layer.backgroundColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0).CGColor
-//            cell?.layer.opacity = 0.7
             cell?.cellLabel.textColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
         }
         
@@ -107,19 +104,16 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
         
         if collectionView == collectionViewOne {
             cell?.layer.backgroundColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0).CGColor
-//            cell?.layer.opacity = 0.7
             cell?.cellLabel.textColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0)
         }
         
         if collectionView == collectionViewTwo {
             cell?.layer.backgroundColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0).CGColor
-//            cell?.layer.opacity = 0.7
             cell?.cellLabel.textColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0)
         }
         
         if collectionView == collectionViewThree {
             cell?.layer.backgroundColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0).CGColor
-//            cell?.layer.opacity = 0.7
             cell?.cellLabel.textColor = UIColor(red: 34/255.0, green: 36/255.0, blue: 38/255.0, alpha: 1.0)
         }
        
