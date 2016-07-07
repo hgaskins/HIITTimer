@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		EE7F6EB61D2D6C6C00078F0D /* CongratsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7F6EB51D2D6C6C00078F0D /* CongratsViewController.swift */; };
+		EE7F6EB81D2EF90F00078F0D /* alert.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EE7F6EB71D2EF90F00078F0D /* alert.mp3 */; };
 		EED8C5751D25BAB600CF5AD7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C5741D25BAB600CF5AD7 /* AppDelegate.swift */; };
 		EED8C5771D25BAB600CF5AD7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED8C5761D25BAB600CF5AD7 /* ViewController.swift */; };
 		EED8C57A1D25BAB600CF5AD7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EED8C5781D25BAB600CF5AD7 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		EE7F6EB51D2D6C6C00078F0D /* CongratsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CongratsViewController.swift; sourceTree = "<group>"; };
+		EE7F6EB71D2EF90F00078F0D /* alert.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alert.mp3; sourceTree = "<group>"; };
 		EED8C5711D25BAB600CF5AD7 /* HIITimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HIITimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EED8C5741D25BAB600CF5AD7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EED8C5761D25BAB600CF5AD7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE7F6EB91D2EF91800078F0D /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EE7F6EB71D2EF90F00078F0D /* alert.mp3 */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		EED8C5681D25BAB600CF5AD7 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				EED8C58A1D25CFA100CF5AD7 /* AppGlobal */,
+				EE7F6EB91D2EF91800078F0D /* Assets */,
 				EED8C5891D25C35400CF5AD7 /* Controller */,
 				EED8C58D1D25D0A800CF5AD7 /* Model */,
 				EED8C5861D25C1D400CF5AD7 /* View */,
@@ -174,6 +185,7 @@
 			files = (
 				EED8C57F1D25BAB600CF5AD7 /* LaunchScreen.storyboard in Resources */,
 				EED8C57C1D25BAB600CF5AD7 /* Assets.xcassets in Resources */,
+				EE7F6EB81D2EF90F00078F0D /* alert.mp3 in Resources */,
 				EED8C57A1D25BAB600CF5AD7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -14,6 +14,13 @@ class StagingViewController: UIViewController {
     
     var timer: NSTimer?
     
+    var initialTimerValue = 3
+    var setsCount = UserRoutine.shared.sets
+    var activeTimerValue = UserRoutine.shared.activeTime
+    var restTimerValue = UserRoutine.shared.restTime
+    
+    var bleep: AVAudioPlayer = AVAudioPlayer()
+    
     @IBOutlet weak var countDownTimer: UILabel!
     @IBOutlet weak var activeOrRestTimerLabel: UILabel!
     
@@ -21,6 +28,21 @@ class StagingViewController: UIViewController {
         
         super.viewDidLoad()
         setCountDownLabel()
+        prepAudio()
+        
+    }
+    
+    func prepAudio() {
+        
+        let urlBleep = NSBundle.mainBundle().pathForResource("alert", ofType: "mp3")!
+
+        do {
+            bleep = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: urlBleep))
+        }
+        catch {
+            print("audio error")
+        }
+        bleep.prepareToPlay()
     }
     
     /*
@@ -29,17 +51,12 @@ class StagingViewController: UIViewController {
      
      */
     
-    var initialTimerValue = 3
-    var setsCount = UserRoutine.shared.sets
-    var activeTimerValue = UserRoutine.shared.activeTime
-    var restTimerValue = UserRoutine.shared.restTime
     
     func update() {
         
         if(initialTimerValue > 0) {
             initialTimerValue -= 1
             countDownTimer.text = "\(initialTimerValue)"
-            
         }
         if initialTimerValue == 0 {
             NSOperationQueue.mainQueue().addOperationWithBlock({
@@ -51,7 +68,10 @@ class StagingViewController: UIViewController {
     }
     
     func setCountDownLabel() {
-        
+
+        NSOperationQueue.mainQueue().addOperationWithBlock { 
+            self.bleep.play()
+        }
         countDownTimer.text = String(initialTimerValue)
         let blueColor = UIColor(red: 242/255.0, green: 242/255.0, blue: 242/255.0, alpha: 1.0)
         view.backgroundColor = blueColor
@@ -85,6 +105,10 @@ class StagingViewController: UIViewController {
     
     func startActiveTimer() {
         
+        
+        NSOperationQueue.mainQueue().addOperationWithBlock {
+            self.bleep.play()
+        }
         activeTimerValue = UserRoutine.shared.activeTime
         countDownTimer.text = String(activeTimerValue)
         let orangeColor = UIColor(red: 242/255.0, green: 94/255.0, blue: 5/255.0, alpha: 1.0)
@@ -124,6 +148,10 @@ class StagingViewController: UIViewController {
     
     func startRestTimer() {
         
+        
+        NSOperationQueue.mainQueue().addOperationWithBlock {
+            self.bleep.play()
+        }
         restTimerValue = UserRoutine.shared.restTime
         countDownTimer.text = String(restTimerValue)
         let restColor = UIColor(red: 20/255.0, green: 94/255.0, blue: 140/255.0, alpha: 1)
