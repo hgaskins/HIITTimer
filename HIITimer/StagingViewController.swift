@@ -13,7 +13,6 @@ import AVFoundation
 class StagingViewController: UIViewController {
     
     var timer: NSTimer?
-    
     var initialTimerValue = 3
     var setsCount = UserRoutine.shared.sets
     var activeTimerValue = UserRoutine.shared.activeTime
@@ -23,6 +22,7 @@ class StagingViewController: UIViewController {
     
     @IBOutlet weak var countDownTimer: UILabel!
     @IBOutlet weak var activeOrRestTimerLabel: UILabel!
+    @IBOutlet weak var emoji: UILabel!
     
     override func viewDidLoad() {
         
@@ -31,6 +31,7 @@ class StagingViewController: UIViewController {
         prepAudio()
         
     }
+    
     
     func prepAudio() {
         
@@ -45,11 +46,32 @@ class StagingViewController: UIViewController {
         bleep.prepareToPlay()
     }
     
-    /*
-     
-     For 3.2.1 IntroCountDown
-     
-     */
+    func emojiAnimation() {
+        
+        UILabel.animateKeyframesWithDuration(1.0, delay: 0, options: .BeginFromCurrentState, animations: {
+            UILabel.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.25, animations: {
+                self.emoji.transform = CGAffineTransformMakeScale(0.5, 0.5)
+            })
+            UILabel.addKeyframeWithRelativeStartTime(0.25, relativeDuration: 0.50, animations: {
+                self.emoji.transform = CGAffineTransformMakeScale(1.0, 1.0)
+            })
+            
+            
+//            UILabel.addKeyframeWithRelativeStartTime(0.25, relativeDuration: 0.5, animations: {
+//                self.emoji.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/315.0))
+//            })
+//            
+//            UILabel.addKeyframeWithRelativeStartTime(0.5, relativeDuration: 0.75, animations: {
+//                self.emoji.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/45.0))
+//            })
+//            
+//            UILabel.addKeyframeWithRelativeStartTime(0.75, relativeDuration: 1.0, animations: {
+//                self.emoji.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/315.0))
+//            })
+            
+            }, completion: nil)
+        
+    }
     
     
     func update() {
@@ -67,6 +89,7 @@ class StagingViewController: UIViewController {
         }
     }
     
+    
     func setCountDownLabel() {
 
         NSOperationQueue.mainQueue().addOperationWithBlock { 
@@ -77,13 +100,8 @@ class StagingViewController: UIViewController {
         view.backgroundColor = blueColor
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.update), userInfo: nil, repeats: true)
         activeOrRestTimerLabel.text = "get ready 🤘"
+        emoji.text = ""
     }
-    
-    /*
-     
-     for startActiveTimer
-     
-     */
     
     
     func updateActiveTimer() {
@@ -91,6 +109,7 @@ class StagingViewController: UIViewController {
         if(activeTimerValue > 0) {
             activeTimerValue -= 1
             countDownTimer.text = "\(activeTimerValue)"
+            emojiAnimation()
         }
         
         if activeTimerValue == 0 {
@@ -105,7 +124,6 @@ class StagingViewController: UIViewController {
     
     func startActiveTimer() {
         
-        
         NSOperationQueue.mainQueue().addOperationWithBlock {
             self.bleep.play()
         }
@@ -115,16 +133,10 @@ class StagingViewController: UIViewController {
         view.backgroundColor = orangeColor
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.updateActiveTimer), userInfo: nil, repeats: true)
-        activeOrRestTimerLabel.text = "work 🏋🏿"
+        activeOrRestTimerLabel.text = "work"
+        emoji.text = "🏋🏿"
     }
-    
-    /*
-     
-     for rest timer
-     
-     */
-    
-    
+
     
     func updateRestTimer() {
         
@@ -146,8 +158,8 @@ class StagingViewController: UIViewController {
         }
     }
     
+    
     func startRestTimer() {
-        
         
         NSOperationQueue.mainQueue().addOperationWithBlock {
             self.bleep.play()
@@ -159,6 +171,7 @@ class StagingViewController: UIViewController {
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.updateRestTimer), userInfo: nil, repeats: true)
         activeOrRestTimerLabel.text = "rest 🛌"
+        emoji.text = ""
         
          setsCount -= 1
     }

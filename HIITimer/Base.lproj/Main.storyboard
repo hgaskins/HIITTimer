@@ -121,7 +121,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v0n-4p-uFf">
-                                <rect key="frame" x="249" y="90" width="102" height="214.5"/>
+                                <rect key="frame" x="249" y="90" width="102" height="215"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="165"/>
                                 <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -132,18 +132,27 @@
                                 <color key="textColor" red="0.13333333333333333" green="0.14117647058823529" blue="0.14901960784313725" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🐙" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rcV-Ou-RjR">
+                                <rect key="frame" x="257" y="444" width="86" height="112"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="86"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Zpp-6k-3PV" firstAttribute="centerY" secondItem="pV1-W8-Idb" secondAttribute="centerY" multiplier="1.33" id="ILM-Df-kjk"/>
-                            <constraint firstItem="v0n-4p-uFf" firstAttribute="centerY" secondItem="pV1-W8-Idb" secondAttribute="centerY" multiplier="0.66" id="d43-SA-gEX"/>
-                            <constraint firstItem="v0n-4p-uFf" firstAttribute="centerX" secondItem="pV1-W8-Idb" secondAttribute="centerX" id="gk8-IV-CqV"/>
-                            <constraint firstItem="Zpp-6k-3PV" firstAttribute="centerX" secondItem="pV1-W8-Idb" secondAttribute="centerX" id="t6h-3G-T6h"/>
+                            <constraint firstItem="Zpp-6k-3PV" firstAttribute="top" secondItem="v0n-4p-uFf" secondAttribute="bottom" constant="58" id="1Jc-zH-aue"/>
+                            <constraint firstItem="rcV-Ou-RjR" firstAttribute="centerX" secondItem="pV1-W8-Idb" secondAttribute="centerX" id="N4l-88-dUd"/>
+                            <constraint firstItem="Zpp-6k-3PV" firstAttribute="centerX" secondItem="pV1-W8-Idb" secondAttribute="centerX" id="UXo-wq-U4k"/>
+                            <constraint firstItem="rcV-Ou-RjR" firstAttribute="top" secondItem="Zpp-6k-3PV" secondAttribute="bottom" constant="8" id="g4U-xg-WP6"/>
+                            <constraint firstItem="Zpp-6k-3PV" firstAttribute="centerX" secondItem="v0n-4p-uFf" secondAttribute="centerX" id="qlk-Pm-M8U"/>
+                            <constraint firstAttribute="bottom" secondItem="Zpp-6k-3PV" secondAttribute="bottom" constant="164" id="zV4-zd-W16"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activeOrRestTimerLabel" destination="Zpp-6k-3PV" id="nsQ-rB-S3M"/>
                         <outlet property="countDownTimer" destination="v0n-4p-uFf" id="Vxx-eQ-e6C"/>
+                        <outlet property="emoji" destination="rcV-Ou-RjR" id="S1i-yp-kn2"/>
                         <segue destination="2Hy-jA-hNj" kind="show" identifier="congratsSegue" id="XIt-RS-qoE"/>
                     </connections>
                 </viewController>

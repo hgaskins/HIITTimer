@@ -127,7 +127,7 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
     
     func wiggle(collectionView: UICollectionView) {
         
-        UIView.animateKeyframesWithDuration(0.50, delay: 0, options: .BeginFromCurrentState, animations: {
+        UIView.animateKeyframesWithDuration(0.5, delay: 0, options: .BeginFromCurrentState, animations: {
             UIView.addKeyframeWithRelativeStartTime(0.0, relativeDuration: 0.25, animations: { 
                 collectionView.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/45.0))
             })
@@ -155,7 +155,7 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
             self.navigationController?.pushViewController(stageVC!, animated: true)
             
         } else {
-            let alertController = UIAlertController(title: "👎 click em all!", message: "select all options to continue 👍", preferredStyle: UIAlertControllerStyle.Alert)
+            let alertController = UIAlertController(title: "☹️ gotta click em all!", message: "select all options to continue 👍", preferredStyle: UIAlertControllerStyle.Alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
             self.presentViewController(alertController, animated: true, completion: nil)
             
