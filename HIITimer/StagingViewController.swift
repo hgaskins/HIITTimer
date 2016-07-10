@@ -56,21 +56,7 @@ class StagingViewController: UIViewController {
                 self.emoji.transform = CGAffineTransformMakeScale(1.0, 1.0)
             })
             
-            
-//            UILabel.addKeyframeWithRelativeStartTime(0.25, relativeDuration: 0.5, animations: {
-//                self.emoji.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/315.0))
-//            })
-//            
-//            UILabel.addKeyframeWithRelativeStartTime(0.5, relativeDuration: 0.75, animations: {
-//                self.emoji.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/45.0))
-//            })
-//            
-//            UILabel.addKeyframeWithRelativeStartTime(0.75, relativeDuration: 1.0, animations: {
-//                self.emoji.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/315.0))
-//            })
-            
             }, completion: nil)
-        
     }
     
     
