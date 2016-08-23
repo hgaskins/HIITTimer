@@ -25,7 +25,7 @@ class CongratsViewContoller: UIViewController {
     private func setupAppearance() {
         
         self.navigationController!.navigationBar.hidden = true
-        goAgainButton.layer.cornerRadius = 3.0
+//        goAgainButton.layer.cornerRadius = 3.0
         goAgainButton.layer.opacity = 0.9
     }
 }
