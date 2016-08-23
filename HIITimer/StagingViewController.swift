@@ -29,8 +29,17 @@ class StagingViewController: UIViewController {
         super.viewDidLoad()
         setCountDownLabel()
         prepAudio()
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Reset", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(StagingViewController.back(_:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
         
     }
+    
+    func back(sender: UIBarButtonItem) {
+        self.navigationController?.popViewControllerAnimated(true)
+        timer?.invalidate()
+    }
+    
     
     
     func prepAudio() {
