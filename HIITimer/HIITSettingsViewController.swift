@@ -121,8 +121,9 @@ class HIITSettingsViewController: UIViewController, UICollectionViewDelegate, UI
     
     private func setupAppearance() {
         
-        letsHIITButton.layer.cornerRadius = 3.0
         letsHIITButton.layer.opacity = 0.9
+        letsHIITButton.center = self.view.center
+        letsHIITButton.titleLabel?.textAlignment = .Center
     }
     
     func wiggle(collectionView: UICollectionView) {

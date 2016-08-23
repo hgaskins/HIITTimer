@@ -20,6 +20,9 @@ class StagingViewController: UIViewController {
     
     var bleep: AVAudioPlayer = AVAudioPlayer()
     
+    var gradientLayer: CAGradientLayer!
+    var gradientIndexCount = 0
+    
     @IBOutlet weak var countDownTimer: UILabel!
     @IBOutlet weak var activeOrRestTimerLabel: UILabel!
     @IBOutlet weak var emoji: UILabel!
@@ -29,8 +32,18 @@ class StagingViewController: UIViewController {
         super.viewDidLoad()
         setCountDownLabel()
         prepAudio()
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Reset", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(StagingViewController.back(_:)))
+        self.navigationItem.leftBarButtonItem = newBackButton
         
     }
+    
+    
+    func back(sender: UIBarButtonItem) {
+        self.navigationController?.popViewControllerAnimated(true)
+        timer?.invalidate()
+    }
+    
     
     
     func prepAudio() {
@@ -56,21 +69,7 @@ class StagingViewController: UIViewController {
                 self.emoji.transform = CGAffineTransformMakeScale(1.0, 1.0)
             })
             
-            
-//            UILabel.addKeyframeWithRelativeStartTime(0.25, relativeDuration: 0.5, animations: {
-//                self.emoji.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/315.0))
-//            })
-//            
-//            UILabel.addKeyframeWithRelativeStartTime(0.5, relativeDuration: 0.75, animations: {
-//                self.emoji.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/45.0))
-//            })
-//            
-//            UILabel.addKeyframeWithRelativeStartTime(0.75, relativeDuration: 1.0, animations: {
-//                self.emoji.transform = CGAffineTransformMakeRotation(CGFloat(M_PI/315.0))
-//            })
-            
             }, completion: nil)
-        
     }
     
     
@@ -129,12 +128,12 @@ class StagingViewController: UIViewController {
         }
         activeTimerValue = UserRoutine.shared.activeTime
         countDownTimer.text = String(activeTimerValue)
-        let orangeColor = UIColor(red: 242/255.0, green: 94/255.0, blue: 5/255.0, alpha: 1.0)
-        view.backgroundColor = orangeColor
+        createGradientLayer(UIColor.redColor(), colorTwo: UIColor.orangeColor(), indexVal: gradientIndexCount)
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.updateActiveTimer), userInfo: nil, repeats: true)
         activeOrRestTimerLabel.text = "work"
         emoji.text = "🏋🏿"
+        gradientIndexCount += 1
     }
 
     
@@ -166,14 +165,24 @@ class StagingViewController: UIViewController {
         }
         restTimerValue = UserRoutine.shared.restTime
         countDownTimer.text = String(restTimerValue)
-        let restColor = UIColor(red: 20/255.0, green: 94/255.0, blue: 140/255.0, alpha: 1)
-        view.backgroundColor = restColor
+        createGradientLayer(UIColor.blueColor(), colorTwo: UIColor.darkGrayColor(), indexVal: gradientIndexCount)
+
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(self.updateRestTimer), userInfo: nil, repeats: true)
         activeOrRestTimerLabel.text = "rest 🛌"
         emoji.text = ""
-        
-         setsCount -= 1
+        setsCount -= 1
+        gradientIndexCount += 1
     }
+    
+    
+    func createGradientLayer(colorOne: UIColor, colorTwo: UIColor, indexVal: Int) {
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        gradientLayer.colors = [colorOne.CGColor, colorTwo.CGColor]
+        self.view.layer.insertSublayer(gradientLayer, atIndex: UInt32(indexVal))
+    }
+    
+    
    
 }
